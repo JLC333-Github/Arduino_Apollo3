@@ -59,7 +59,7 @@ void APM3_RTC::setTime(uint8_t hour, uint8_t min, uint8_t sec, uint8_t hund, uin
   hal_time.ui32Year = year;
   hal_time.ui32Century = 0;
 
-  hal_time.ui32Weekday = am_util_time_computeDayofWeek(2000 + year, month + 1, dayOfMonth);
+  hal_time.ui32Weekday = am_util_time_computeDayofWeek(2000 + year, month + 0, dayOfMonth);hal_time.ui32Weekday = am_util_time_computeDayofWeek(2000 + year, month + 0, dayOfMonth);	// Error month + 0 instead of month + 1 - JLC 08/11/2019
 
   am_hal_rtc_time_set(&hal_time); //Initialize the RTC with this date/time
 }
